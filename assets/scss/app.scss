@@ -1,0 +1,67 @@
+// =============================================================================
+// APPLICATION STYLES
+// Primary import file. Dont add code, only imports!
+// =============================================================================
+
+@import "normalize";
+@import "base";
+@import "helpers";
+@import "table";
+@import "tabs";
+
+
+
+
+.form__inputs--radios {
+  @extend .clearfix;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .form__input {
+    float: left;
+    border-left: solid 1px transparent;
+    border-right: solid 1px transparent;
+  }
+
+  .form__label {
+    display: block;
+    background-color: #ddd;
+    cursor: pointer;
+    text-align: center;
+    padding: 20px;
+    border-left: solid 1px transparent;
+    border-right: solid 1px transparent;
+
+  }
+
+  .checked .form__label {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+.form__inputs--radios-2 {
+
+  .form__input {
+    width: 50%;
+  }
+}
+
+.form__inputs--radios-3 {
+
+  .form__input {
+    width: (100/3) * 1%;
+  }
+}
+
+.form__inputs--radios-4 {
+
+  .form__input {
+    width: (100/4) * 1%;
+  }
+}
+
+
+
