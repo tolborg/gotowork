@@ -445,8 +445,15 @@ th {
 
 /* line 11, ../scss/_base.scss */
 body {
-  background-color: #ccc;
-  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Open sans', Arial, sans-serif;
+  background-color: #F2F2F2;
+  color: #484848;
+}
+
+/* line 17, ../scss/_base.scss */
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
 }
 
 /* line 5, ../scss/_helpers.scss */
@@ -455,37 +462,18 @@ body {
   margin: 0 auto;
 }
 
-/* line 9, ../scss/_helpers.scss */
-.section {
-  background-color: #fff;
-  padding: 20px;
-  border: solid 1px #aaa;
-  border-bottom: none;
-}
-
-/* line 15, ../scss/_helpers.scss */
-.section--last {
-  border-bottom: solid 1px #aaa;
-  margin-bottom: 20px;
-}
-
-/* line 19, ../scss/_helpers.scss */
-.section--spaced {
-  margin-bottom: 20px;
-}
-
-/* line 23, ../scss/_helpers.scss */
+/* line 10, ../scss/_helpers.scss */
 .hidden {
   display: none;
 }
 
-/* line 29, ../scss/_helpers.scss */
-.clearfix:before, .tabs__triggers ul:before, .form__inputs--radios:before, .clearfix:after, .tabs__triggers ul:after, .form__inputs--radios:after {
+/* line 16, ../scss/_helpers.scss */
+.clearfix:before, .tabs__triggers ul:before, #output:before, .form__inputs--radios:before, .form__input--select label:before, .clearfix:after, .tabs__triggers ul:after, #output:after, .form__inputs--radios:after, .form__input--select label:after {
   content: " ";
   display: table;
 }
-/* line 35, ../scss/_helpers.scss */
-.clearfix:after, .tabs__triggers ul:after, .form__inputs--radios:after {
+/* line 22, ../scss/_helpers.scss */
+.clearfix:after, .tabs__triggers ul:after, #output:after, .form__inputs--radios:after, .form__input--select label:after {
   clear: both;
 }
 
@@ -530,44 +518,138 @@ th[colspan], td[colspan] {
 /* line 19, ../scss/_tabs.scss */
 .tabs__triggers li {
   float: left;
+  width: 33.33333%;
+  border-left: solid 1px transparent;
+  border-right: solid 1px transparent;
 }
 
-/* line 25, ../scss/_tabs.scss */
+/* line 27, ../scss/_tabs.scss */
 .tabs__trigger {
-  display: inline-block;
+  display: block;
+  background-color: #ddd;
+  cursor: pointer;
+  text-align: center;
   padding: 20px;
   text-decoration: none;
   color: #000;
   background-color: #ddd;
 }
 
-/* line 34, ../scss/_tabs.scss */
+/* line 39, ../scss/_tabs.scss */
 .tabs__trigger--active {
   color: #fff;
-  background-color: #000;
+  background-color: #484848;
 }
 
-/* line 40, ../scss/_tabs.scss */
+/* line 45, ../scss/_tabs.scss */
 .tabs__section {
   display: none;
 }
 
-/* line 44, ../scss/_tabs.scss */
+/* line 49, ../scss/_tabs.scss */
 .tabs__section--active {
   display: block;
 }
 
-/* line 18, ../scss/app.scss */
+/* line 5, ../scss/_structure.scss */
+#main {
+  background-color: #fff;
+  padding-bottom: 80px;
+  padding-top: 60px;
+}
+
+/* line 14, ../scss/_structure.scss */
+#footer {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+/* line 19, ../scss/_structure.scss */
+#footer p {
+  font-size: 1.25em;
+  margin-bottom: 20px;
+}
+/* line 24, ../scss/_structure.scss */
+#footer a {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 60px;
+}
+/* line 30, ../scss/_structure.scss */
+#footer a img {
+  height: 100%;
+  width: auto;
+}
+
+/* line 37, ../scss/_structure.scss */
+#header {
+  background-color: #F2F2F2;
+  height: 80px;
+}
+
+/* line 44, ../scss/_structure.scss */
+#output {
+  border-top: solid 1px #e0e0e0;
+  padding-top: 40px;
+  margin-top: 80px;
+}
+
+/* line 5, ../scss/_output.scss */
+#output {
+  position: relative;
+}
+
+/* line 10, ../scss/_output.scss */
+.output__section {
+  width: 50%;
+  float: left;
+  text-align: center;
+  border: solid 1px #484848;
+  border-left: none;
+  padding: 20px;
+}
+/* line 18, ../scss/_output.scss */
+.output__section.output__benefits {
+  border-left: solid 1px #484848;
+}
+
+/* line 23, ../scss/_output.scss */
+.output__value {
+  font-size: 3.5em;
+}
+
+/* line 28, ../scss/_output.scss */
+.output__difference {
+  width: 100%;
+  float: left;
+  border: solid 1px #484848;
+  border-top: none;
+  text-align: center;
+  padding: 20px;
+}
+
+/* line 37, ../scss/_output.scss */
+.details__open {
+  text-align: right;
+  margin-top: 20px;
+}
+/* line 41, ../scss/_output.scss */
+.details__open a {
+  color: #484848;
+}
+
+/* line 21, ../scss/app.scss */
 .form__inputs--radios input[type="radio"] {
   display: none;
 }
-/* line 22, ../scss/app.scss */
+/* line 25, ../scss/app.scss */
 .form__inputs--radios .form__input {
   float: left;
   border-left: solid 1px transparent;
   border-right: solid 1px transparent;
 }
-/* line 28, ../scss/app.scss */
+/* line 31, ../scss/app.scss */
 .form__inputs--radios .form__label {
   display: block;
   background-color: #ddd;
@@ -577,23 +659,110 @@ th[colspan], td[colspan] {
   border-left: solid 1px transparent;
   border-right: solid 1px transparent;
 }
-/* line 39, ../scss/app.scss */
+/* line 42, ../scss/app.scss */
 .form__inputs--radios .checked .form__label {
   color: #fff;
-  background-color: #000;
+  background-color: #484848;
 }
 
-/* line 47, ../scss/app.scss */
+/* line 50, ../scss/app.scss */
 .form__inputs--radios-2 .form__input {
   width: 50%;
 }
 
-/* line 54, ../scss/app.scss */
+/* line 57, ../scss/app.scss */
 .form__inputs--radios-3 .form__input {
   width: 33.33333%;
 }
 
-/* line 61, ../scss/app.scss */
+/* line 64, ../scss/app.scss */
 .form__inputs--radios-4 .form__input {
   width: 25%;
+}
+
+/* line 71, ../scss/app.scss */
+.form__group {
+  margin-bottom: 30px;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+}
+
+/* line 77, ../scss/app.scss */
+.form__group-label {
+  margin-bottom: 10px;
+}
+
+/* line 83, ../scss/app.scss */
+.form__input--select label {
+  position: relative;
+  display: block;
+}
+/* line 89, ../scss/app.scss */
+.form__input--select .form__label {
+  display: block;
+  float: left;
+  width: 50%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 97, ../scss/app.scss */
+.form__input--select select {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  opacity: 0;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.875em;
+}
+/* line 115, ../scss/app.scss */
+.form__input--select .form-fake {
+  position: relative;
+  display: block;
+  background-color: #ddd;
+  cursor: pointer;
+  padding: 20px;
+  color: #000;
+  background-color: #ddd;
+}
+/* line 127, ../scss/app.scss */
+.form__input--select .form-fake:after {
+  display: block;
+  width: 30px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  content: "";
+  background-image: url(../img/down.svg);
+  background-size: 30px 18px;
+}
+/* line 145, ../scss/app.scss */
+.form__group--children .form__input--select select {
+  left: auto;
+  width: 50%;
+}
+/* line 150, ../scss/app.scss */
+.form__group--children .form__input--select .form-fake {
+  float: right;
+  width: 50%;
+}
+
+/* line 160, ../scss/app.scss */
+.form__group--children .form__input--select {
+  margin-bottom: 10px;
+}
+/* line 163, ../scss/app.scss */
+.form__group--children .form__input--select:first-child {
+  margin-top: 20px;
 }

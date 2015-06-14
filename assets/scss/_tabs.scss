@@ -18,14 +18,19 @@
   }
   li {
     float: left;
-    // display: inline;
+    width: (100/3) * 1%;
+    border-left: solid 1px transparent;
+    border-right: solid 1px transparent;
   }
 }
 
 .tabs__trigger {
-  display: inline-block;
-  // border: solid 1px #000;
+  display: block;
+  background-color: #ddd;
+  cursor: pointer;
+  text-align: center;
   padding: 20px;
+
   text-decoration: none;
   color: #000;
   background-color: #ddd;
@@ -33,7 +38,7 @@
 
 .tabs__trigger--active {
   color: #fff;
-  background-color: #000;
+  background-color: $blackish;
 }
 
 

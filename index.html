@@ -7,508 +7,559 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/css/app.css">
   </head>
   <body>
 
-
-  <div class="container">
-
-    <h1>Hvornår kan det betale sig at arbejde?</h1>
-
-    <div id="form">
-      <form>
-
-        <div class="form__group form__group--age section">
-          <h3 class="form__group-label">Alder</h3>
-          <div class="form__inputs form__inputs--radios form__inputs--radios-2">
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">Under 30 år</span>
-                <input type="radio" name="age" value="a">
-              </label>
-            </div>
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">Over 30 år</span>
-                <input type="radio" name="age" value="b">
-              </label>
-            </div>
-          </div>
-        </div>
-        <!-- form__group-age -->
-
-        <div class="form__group form__group--civil-status section">
-          <h3 class="form__group-label">Civil status</h3>
-          <div class="form__inputs form__inputs--radios form__inputs--radios-3">
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">Enlig</span>
-                <input type="radio" name="civil_status" value="a">
-              </label>
-            </div>
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">Samlevende</span>
-                <input type="radio" name="civil_status" value="b">
-              </label>
-            </div>
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">Gift</span>
-                <input type="radio" name="civil_status" value="c">
-              </label>
-            </div>
-          </div>
-        </div>
-        <!-- form__group-civil-status -->
-
-        <div class="form__group form__group--children section">
-          <h3 class="form__group-label">Børn</h3>
-          <div class="form__inputs form__inputs--radios form__inputs--radios-4">
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">0</span>
-                <input type="radio" name="children_count" value="a" data-hide="1-2-3">
-              </label>
-            </div>
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">1</span>
-                <input type="radio" name="children_count" value="b" data-hide="2-3" data-show="1">
-              </label>
-            </div>
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">2</span>
-                <input type="radio" name="children_count" value="c" data-hide="3" data-show="1-2">
-              </label>
-            </div>
-            <div class="form__input form__input--radio">
-              <label>
-                <span class="form__label">3</span>
-                <input type="radio" name="children_count" value="d" data-show="1-2-3">
-              </label>
-            </div>
-          </div>
-          <div class="form__inputs">
-            <div class="form__input form__input--select hidden">
-              <label>Pasning af barn 1</label>
-              <select name="child_care_1">
-                <option value="a">Bliver passet hjemme</option>
-                <option value="b">Vuggestue</option>
-                <option value="c">Børnehave</option>
-                <option value="d">SFO</option>
-              </select>
-            </div>
-            <div class="form__input form__input--select hidden">
-              <label>Pasning af barn 2</label>
-              <select name="child_care_2">
-                <option value="a">Bliver passet hjemme</option>
-                <option value="b">Vuggestue</option>
-                <option value="c">Børnehave</option>
-                <option value="d">SFO</option>
-              </select>
-            </div>
-            <div class="form__input form__input--select hidden">
-              <label>Pasning af barn 3</label>
-              <select name="child_care_3">
-                <option value="a">Bliver passet hjemme</option>
-                <option value="b">Vuggestue</option>
-                <option value="c">Børnehave</option>
-                <option value="d">SFO</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <!-- form__group-children -->
-
-        <div class="form__group form__group--job section section--last">
-          <h3 class="form__group-label">LØNINDKOMST</h3>
-          <div class="form__inputs">
-            <div class="form__input form__input--select">
-              <select name="salary_value">
-                <option value="18000">18.000 kr.</option>
-                <option value="19000">19.000 kr.</option>
-                <option value="20000">20.000 kr.</option>
-                <option value="21000">21.000 kr.</option>
-                <option value="22000">22.000 kr.</option>
-                <option value="23000">23.000 kr.</option>
-                <option value="24000">24.000 kr.</option>
-                <option value="25000">25.000 kr.</option>
-                <option value="26000">26.000 kr.</option>
-                <option value="27000">27.000 kr.</option>
-                <option value="28000">28.000 kr.</option>
-                <option value="29000">29.000 kr.</option>
-                <option value="30000">30.000 kr.</option>
-                <option value="31000">31.000 kr.</option>
-                <option value="32000">32.000 kr.</option>
-                <option value="33000">33.000 kr.</option>
-                <option value="34000">34.000 kr.</option>
-                <option value="35000">35.000 kr.</option>
-                <option value="36000">36.000 kr.</option>
-                <option value="37000">37.000 kr.</option>
-                <option value="38000">38.000 kr.</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <!-- form__group-civil-status -->
-
-      </form>
-
-      <div id="output" class="section section--last">
-        <h2>Husstandens rådighedsbeløb</h2>
-
-
-        <div class="output__benefits">
-          <h3>Kontanthjælp</h3>
-          <div class="output__value">
-          </div>
-        </div>
-        <div class="output__salary">
-          <h3>I beskæftigelse</h3>
-          <div class="output__value">
-          </div>
-        </div>
-
-        <div class="details__open">
-          <a href="#">Vis detaljerede eksempler på udregninger</a>
-        </div>
-
+    <header id="header">
+      <div class="container">
+        <h1>Hvornår kan det betale sig at arbejde?</h1>
       </div>
+    </header>
 
-      <div id="details" class="section section--last hidden">
-        <div class="details__close"><a href="#">Luk</a></div>
+    <main id="main">
 
-        <h2>Detaljer</h2>
-        <p>En tekst om detaljerne blah blah blah blah</p>
+      <div id="intro">
+        <div class="container">
+          Intro her
+        </div>
+      </div>
+      <!-- #intro -->
 
-        <div class="tabs">
 
-          <div class="tabs__triggers">
-            <ul>
-              <li><a href="#" data-tab-trigger="1" class="tabs__trigger tabs__trigger--active">Enlig med to børn</a></li>
-              <li><a href="#" data-tab-trigger="2" class="tabs__trigger">Samlevende med to børn</a></li>
-              <li><a href="#" data-tab-trigger="3" class="tabs__trigger">Ægtepar med to børn</a></li>
-            </ul>
+      <div id="form">
+        <div class="container">
+          <form>
+
+            <div class="form__group form__group--age">
+              <h3 class="form__group-label">Alder</h3>
+              <div class="form__inputs form__inputs--radios form__inputs--radios-2">
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">Under 30 år</span>
+                    <input type="radio" name="age" value="a">
+                  </label>
+                </div>
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">Over 30 år</span>
+                    <input type="radio" name="age" value="b">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- form__group-age -->
+
+            <div class="form__group form__group--civil-status">
+              <h3 class="form__group-label">Civil status</h3>
+              <div class="form__inputs form__inputs--radios form__inputs--radios-3">
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">Enlig</span>
+                    <input type="radio" name="civil_status" value="a">
+                  </label>
+                </div>
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">Samlevende</span>
+                    <input type="radio" name="civil_status" value="b">
+                  </label>
+                </div>
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">Gift</span>
+                    <input type="radio" name="civil_status" value="c">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- form__group-civil-status -->
+
+            <div class="form__group form__group--children">
+              <h3 class="form__group-label">Børn</h3>
+              <div class="form__inputs form__inputs--radios form__inputs--radios-4">
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">0</span>
+                    <input type="radio" name="children_count" value="a" data-hide="1-2-3">
+                  </label>
+                </div>
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">1</span>
+                    <input type="radio" name="children_count" value="b" data-hide="2-3" data-show="1">
+                  </label>
+                </div>
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">2</span>
+                    <input type="radio" name="children_count" value="c" data-hide="3" data-show="1-2">
+                  </label>
+                </div>
+                <div class="form__input form__input--radio">
+                  <label>
+                    <span class="form__label">3</span>
+                    <input type="radio" name="children_count" value="d" data-show="1-2-3">
+                  </label>
+                </div>
+              </div>
+              <div class="form__inputs">
+                <div class="form__input form__input--select hidden">
+                  <label>
+                    <span class="form__label">Vælg pasning af barn 1</span>
+                    <select name="child_care_1">
+                      <option value="a">Bliver passet hjemme</option>
+                      <option value="b">Vuggestue</option>
+                      <option value="c">Børnehave</option>
+                      <option value="d">SFO</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="form__input form__input--select hidden">
+                  <label>
+                    <span class="form__label">Vælg pasning af barn 2</span>
+                    <select name="child_care_2">
+                      <option value="a">Bliver passet hjemme</option>
+                      <option value="b">Vuggestue</option>
+                      <option value="c">Børnehave</option>
+                      <option value="d">SFO</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="form__input form__input--select hidden">
+                  <label>
+                    <span class="form__label">Vælg pasning af barn 3</span>
+                    <select name="child_care_3">
+                      <option value="a">Bliver passet hjemme</option>
+                      <option value="b">Vuggestue</option>
+                      <option value="c">Børnehave</option>
+                      <option value="d">SFO</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- form__group-children -->
+
+            <div class="form__group form__group--job">
+              <h3 class="form__group-label">Lønindkomst</h3>
+              <div class="form__inputs">
+                <div class="form__input form__input--select">
+                  <label>
+                    <select name="salary_value">
+                      <option value="18000">18.000 kr.</option>
+                      <option value="19000">19.000 kr.</option>
+                      <option value="20000">20.000 kr.</option>
+                      <option value="21000">21.000 kr.</option>
+                      <option value="22000">22.000 kr.</option>
+                      <option value="23000">23.000 kr.</option>
+                      <option value="24000">24.000 kr.</option>
+                      <option value="25000">25.000 kr.</option>
+                      <option value="26000">26.000 kr.</option>
+                      <option value="27000">27.000 kr.</option>
+                      <option value="28000">28.000 kr.</option>
+                      <option value="29000">29.000 kr.</option>
+                      <option value="30000">30.000 kr.</option>
+                      <option value="31000">31.000 kr.</option>
+                      <option value="32000">32.000 kr.</option>
+                      <option value="33000">33.000 kr.</option>
+                      <option value="34000">34.000 kr.</option>
+                      <option value="35000">35.000 kr.</option>
+                      <option value="36000">36.000 kr.</option>
+                      <option value="37000">37.000 kr.</option>
+                      <option value="38000">38.000 kr.</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- form__group-civil-status -->
+
+          </form>
+        </div>
+      </div>
+      <!-- #form -->
+
+
+      <div id="output">
+        <div class="container">
+
+          <div class="output__header">
+            <h2>Resultat</h2>
+            <p>Blah blah blah blah</p>
           </div>
 
-          <div class="tabs__sections">
-            <div class="tabs__section tabs__section--active" data-tab-section="1">
-              <p>En tekst om enlig med to børn blah blah blah blah</p>
-              <table>
-                <tr>
-                  <td>Lønindkomst</td>
-                  <td>0</td>
-                  <td>240.000</td>
-                  <td>300.000</td>
-                </tr>
-                <tr>
-                  <td>Kontanthjælp</td>
-                  <td>172.992</td>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr class="sum">
-                  <td>Samlet indkomst (inkl. eget ATP-bidrag)</td>
-                  <td>172.992</td>
-                  <td>240.000</td>
-                  <td>300.000</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Boligstøtte</td>
-                  <td>41.928</td>
-                  <td>36.876</td>
-                  <td>26.940</td>
-                </tr>
-                <tr>
-                  <td>Børnefamilieydelse</td>
-                  <td>31.848</td>
-                  <td>31.848</td>
-                  <td>31.848</td>
-                </tr>
-                <tr>
-                  <td>Børnetilskud</td>
-                  <td>47.108</td>
-                  <td>47.108</td>
-                  <td>47.108</td>
-                </tr>
-                <tr class="sum">
-                  <td>Skattefrie overførsler, i alt</td>
-                  <td>120.884</td>
-                  <td>115.832</td>
-                  <td>105.896</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Arbejdsmarkedsbidrag</td>
-                  <td>0</td>
-                  <td>19.114</td>
-                  <td>23.914</td>
-                </tr>
-                <tr>
-                  <td>ATP-indbetaling</td>
-                  <td>1.080</td>
-                  <td>1.080</td>
-                  <td>1.080</td>
-                </tr>
-                <tr>
-                  <td>Skat</td>
-                  <td>46.943</td>
-                  <td>55.787</td>
-                  <td>74.284</td>
-                </tr>
-                <tr class="sum">
-                  <td>Samlet skattebetaling (inkl. eget ATP-bidrag)</td>
-                  <td>48.023</td>
-                  <td>75.981</td>
-                  <td>99.278</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Udgifter til el, vand og varme</td>
-                  <td>12.912</td>
-                  <td>12.912</td>
-                  <td>12.912</td>
-                </tr>
-                <tr>
-                  <td>Husleje</td>
-                  <td>73.728</td>
-                  <td>73.728</td>
-                  <td>73.728</td>
-                </tr>
-                <tr>
-                  <td>Forældrebetaling til daginstitution</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>8.275</td>
-                </tr>
-                <tr class="sum--large">
-                  <td>Rådighedsbeløb</td>
-                  <td>159.213</td>
-                  <td>193.211</td>
-                  <td>211.703</td>
-                </tr>
-              </table>
+          <div class="output__section output__benefits">
+            <div class="output__label">
+              <h3>Husstandens årlige rådighedsbeløb <br>på kontanthjælp</h3>
             </div>
-            <div class="tabs__section" data-tab-section="2">
-              <p>En tekst om samlevende med to børn blah blah blah blah</p>
-              <table>
-                <tr>
-                  <td>Lønindkomst</td>
-                  <td>0</td>
-                  <td>240.000</td>
-                  <td>300.000</td>
-                </tr>
-                <tr>
-                  <td>Kontanthjælp</td>
-                  <td>345.984</td>
-                  <td>172.992</td>
-                  <td>172.992</td>
-                </tr>
-                <tr class="sum">
-                  <td>Samlet indkomst (inkl. eget ATP-bidrag)</td>
-                  <td>345.984</td>
-                  <td>412.992</td>
-                  <td>472.992</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Boligstøtte</td>
-                  <td>14.556</td>
-                  <td>5.928</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>Børnefamilieydelse</td>
-                  <td>31.848</td>
-                  <td>31.848</td>
-                  <td>31.848</td>
-                </tr>
-                <tr class="sum">
-                  <td>Skattefrie overførsler, i alt</td>
-                  <td>46.404</td>
-                  <td>37.776</td>
-                  <td>31.848</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Arbejdsmarkedsbidrag</td>
-                  <td>0</td>
-                  <td>19.114</td>
-                  <td>23.914</td>
-                </tr>
-                <tr>
-                  <td>ATP-indbetaling</td>
-                  <td>2.160</td>
-                  <td>2.160</td>
-                  <td>1.080</td>
-                </tr>
-                <tr>
-                  <td>Skat</td>
-                  <td>93.192</td>
-                  <td>105.878</td>
-                  <td>125.340</td>
-                </tr>
-                <tr class="sum">
-                  <td>Samlet skattebetaling (inkl. eget ATP-bidrag)</td>
-                  <td>95.352</td>
-                  <td>127.152</td>
-                  <td>151.414</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Udgifter til el, vand og varme</td>
-                  <td>14.124</td>
-                  <td>14.124</td>
-                  <td>14.124</td>
-                </tr>
-                <tr>
-                  <td>Husleje</td>
-                  <td>73.728</td>
-                  <td>73.728</td>
-                  <td>73.728</td>
-                </tr>
-                <tr>
-                  <td>Forældrebetaling til daginstitution</td>
-                  <td>25.313</td>
-                  <td>31.641</td>
-                  <td>38.942</td>
-                </tr>
-                <tr class="sum--large">
-                  <td>Rådighedsbeløb</td>
-                  <td>183.871</td>
-                  <td>204.123</td>
-                  <td>226.632</td>
-                </tr>
-              </table>
-            </div>
-            <div class="tabs__section" data-tab-section="3">
-              <p>En tekst om gift par med to børn blah blah blah blah</p>
-              <table>
-                <tr>
-                  <td>Lønindkomst</td>
-                  <td>0</td>
-                  <td>240.000</td>
-                  <td>300.000</td>
-                </tr>
-                <tr>
-                  <td>Kontanthjælp</td>
-                  <td>345.984</td>
-                  <td>174.907</td>
-                  <td>119.707</td>
-                </tr>
-                <tr class="sum">
-                  <td>Samlet indkomst(inkl. eget ATP-bidrag)</td>
-                  <td>345.984</td>
-                  <td>414.907</td>
-                  <td>419.707</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Boligstøtte</td>
-                  <td>14.556</td>
-                  <td>5.580</td>
-                  <td>5.388</td>
-                </tr>
-                <tr>
-                  <td>Børnefamilieydelse</td>
-                  <td>31.848</td>
-                  <td>31.848</td>
-                  <td>31.848</td>
-                </tr>
-                <tr class="sum">
-                  <td>Skattefrie overførsler, i alt</td>
-                  <td>46.404</td>
-                  <td>37.428</td>
-                  <td>37.236</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Arbejdsmarkedsbidrag</td>
-                  <td>0</td>
-                  <td>19.114</td>
-                  <td>23.914</td>
-                </tr>
-                <tr>
-                  <td>ATP-indbetaling</td>
-                  <td>2.160</td>
-                  <td>2.160</td>
-                  <td>1.080</td>
-                </tr>
-                <tr>
-                  <td>Skat</td>
-                  <td>93.192</td>
-                  <td>106.603</td>
-                  <td>106.035</td>
-                </tr>
-                <tr class="sum">
-                  <td>Samlet skattebetaling (inkl. eget ATP-bidrag)</td>
-                  <td>95.352</td>
-                  <td>127.877</td>
-                  <td>131.028</td>
-                </tr>
-                <tr>
-                  <td colspan="4"></td>
-                </tr>
-                <tr>
-                  <td>Udgifter til el, vand og varme</td>
-                  <td>14.124</td>
-                  <td>14.124</td>
-                  <td>14.124</td>
-                </tr>
-                <tr>
-                  <td>Husleje</td>
-                  <td>73.728</td>
-                  <td>73.728</td>
-                  <td>73.728</td>
-                </tr>
-                <tr>
-                  <td>Forældrebetaling til daginstitution</td>
-                  <td>25.313</td>
-                  <td>32.127</td>
-                  <td>32.127</td>
-                </tr>
-                <tr class="sum--large">
-                  <td>Rådighedsbeløb</td>
-                  <td>183.871</td>
-                  <td>204.479</td>
-                  <td>205.935</td>
-                </tr>
-              </table>
+            <div class="output__value">
             </div>
           </div>
+          <div class="output__section output__salary">
+            <div class="output__label">
+              <h3>Husstandens årlige rådighedsbeløb <br>i beskæftigelse</h3>
+            </div>
+            <div class="output__value">
+            </div>
+          </div>
+          <div class="output__difference">
+            <div class="output__label">
+              <h3>Forskel</h3>
+            </div>
+            <div class="output__value">
+              <span class="output__difference-amount">
+              </span>
+              <span class="output__difference-percentage">
+              </span>
+            </div>
+          </div>
+
+          <div class="details__open">
+            <a href="#" class="toggle" data-target="#details" data-opentext="Vis detaljerede eksempler på udregninger" data-closetext="Skjul detaljerede eksempler på udregninger">Vis detaljerede eksempler på udregninger</a>
+          </div>
+
+          <div id="details" class="hidden">
+
+            <h2>Detaljer</h2>
+            <p>En tekst om detaljerne blah blah blah blah</p>
+
+            <div class="tabs">
+
+              <div class="tabs__triggers">
+                <ul>
+                  <li><a href="#" data-tab-trigger="1" class="tabs__trigger tabs__trigger--active">Enlig med to børn</a></li>
+                  <li><a href="#" data-tab-trigger="2" class="tabs__trigger">Samlevende med to børn</a></li>
+                  <li><a href="#" data-tab-trigger="3" class="tabs__trigger">Ægtepar med to børn</a></li>
+                </ul>
+              </div>
+
+              <div class="tabs__sections">
+                <div class="tabs__section tabs__section--active" data-tab-section="1">
+                  <p>En tekst om enlig med to børn blah blah blah blah</p>
+                  <table>
+                    <tr>
+                      <td>Lønindkomst</td>
+                      <td>0</td>
+                      <td>240.000</td>
+                      <td>300.000</td>
+                    </tr>
+                    <tr>
+                      <td>Kontanthjælp</td>
+                      <td>172.992</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Samlet indkomst (inkl. eget ATP-bidrag)</td>
+                      <td>172.992</td>
+                      <td>240.000</td>
+                      <td>300.000</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Boligstøtte</td>
+                      <td>41.928</td>
+                      <td>36.876</td>
+                      <td>26.940</td>
+                    </tr>
+                    <tr>
+                      <td>Børnefamilieydelse</td>
+                      <td>31.848</td>
+                      <td>31.848</td>
+                      <td>31.848</td>
+                    </tr>
+                    <tr>
+                      <td>Børnetilskud</td>
+                      <td>47.108</td>
+                      <td>47.108</td>
+                      <td>47.108</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Skattefrie overførsler, i alt</td>
+                      <td>120.884</td>
+                      <td>115.832</td>
+                      <td>105.896</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Arbejdsmarkedsbidrag</td>
+                      <td>0</td>
+                      <td>19.114</td>
+                      <td>23.914</td>
+                    </tr>
+                    <tr>
+                      <td>ATP-indbetaling</td>
+                      <td>1.080</td>
+                      <td>1.080</td>
+                      <td>1.080</td>
+                    </tr>
+                    <tr>
+                      <td>Skat</td>
+                      <td>46.943</td>
+                      <td>55.787</td>
+                      <td>74.284</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Samlet skattebetaling (inkl. eget ATP-bidrag)</td>
+                      <td>48.023</td>
+                      <td>75.981</td>
+                      <td>99.278</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Udgifter til el, vand og varme</td>
+                      <td>12.912</td>
+                      <td>12.912</td>
+                      <td>12.912</td>
+                    </tr>
+                    <tr>
+                      <td>Husleje</td>
+                      <td>73.728</td>
+                      <td>73.728</td>
+                      <td>73.728</td>
+                    </tr>
+                    <tr>
+                      <td>Forældrebetaling til daginstitution</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>8.275</td>
+                    </tr>
+                    <tr class="sum--large">
+                      <td>Rådighedsbeløb</td>
+                      <td>159.213</td>
+                      <td>193.211</td>
+                      <td>211.703</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="tabs__section" data-tab-section="2">
+                  <p>En tekst om samlevende med to børn blah blah blah blah</p>
+                  <table>
+                    <tr>
+                      <td>Lønindkomst</td>
+                      <td>0</td>
+                      <td>240.000</td>
+                      <td>300.000</td>
+                    </tr>
+                    <tr>
+                      <td>Kontanthjælp</td>
+                      <td>345.984</td>
+                      <td>172.992</td>
+                      <td>172.992</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Samlet indkomst (inkl. eget ATP-bidrag)</td>
+                      <td>345.984</td>
+                      <td>412.992</td>
+                      <td>472.992</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Boligstøtte</td>
+                      <td>14.556</td>
+                      <td>5.928</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td>Børnefamilieydelse</td>
+                      <td>31.848</td>
+                      <td>31.848</td>
+                      <td>31.848</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Skattefrie overførsler, i alt</td>
+                      <td>46.404</td>
+                      <td>37.776</td>
+                      <td>31.848</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Arbejdsmarkedsbidrag</td>
+                      <td>0</td>
+                      <td>19.114</td>
+                      <td>23.914</td>
+                    </tr>
+                    <tr>
+                      <td>ATP-indbetaling</td>
+                      <td>2.160</td>
+                      <td>2.160</td>
+                      <td>1.080</td>
+                    </tr>
+                    <tr>
+                      <td>Skat</td>
+                      <td>93.192</td>
+                      <td>105.878</td>
+                      <td>125.340</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Samlet skattebetaling (inkl. eget ATP-bidrag)</td>
+                      <td>95.352</td>
+                      <td>127.152</td>
+                      <td>151.414</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Udgifter til el, vand og varme</td>
+                      <td>14.124</td>
+                      <td>14.124</td>
+                      <td>14.124</td>
+                    </tr>
+                    <tr>
+                      <td>Husleje</td>
+                      <td>73.728</td>
+                      <td>73.728</td>
+                      <td>73.728</td>
+                    </tr>
+                    <tr>
+                      <td>Forældrebetaling til daginstitution</td>
+                      <td>25.313</td>
+                      <td>31.641</td>
+                      <td>38.942</td>
+                    </tr>
+                    <tr class="sum--large">
+                      <td>Rådighedsbeløb</td>
+                      <td>183.871</td>
+                      <td>204.123</td>
+                      <td>226.632</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="tabs__section" data-tab-section="3">
+                  <p>En tekst om gift par med to børn blah blah blah blah</p>
+                  <table>
+                    <tr>
+                      <td>Lønindkomst</td>
+                      <td>0</td>
+                      <td>240.000</td>
+                      <td>300.000</td>
+                    </tr>
+                    <tr>
+                      <td>Kontanthjælp</td>
+                      <td>345.984</td>
+                      <td>174.907</td>
+                      <td>119.707</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Samlet indkomst(inkl. eget ATP-bidrag)</td>
+                      <td>345.984</td>
+                      <td>414.907</td>
+                      <td>419.707</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Boligstøtte</td>
+                      <td>14.556</td>
+                      <td>5.580</td>
+                      <td>5.388</td>
+                    </tr>
+                    <tr>
+                      <td>Børnefamilieydelse</td>
+                      <td>31.848</td>
+                      <td>31.848</td>
+                      <td>31.848</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Skattefrie overførsler, i alt</td>
+                      <td>46.404</td>
+                      <td>37.428</td>
+                      <td>37.236</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Arbejdsmarkedsbidrag</td>
+                      <td>0</td>
+                      <td>19.114</td>
+                      <td>23.914</td>
+                    </tr>
+                    <tr>
+                      <td>ATP-indbetaling</td>
+                      <td>2.160</td>
+                      <td>2.160</td>
+                      <td>1.080</td>
+                    </tr>
+                    <tr>
+                      <td>Skat</td>
+                      <td>93.192</td>
+                      <td>106.603</td>
+                      <td>106.035</td>
+                    </tr>
+                    <tr class="sum">
+                      <td>Samlet skattebetaling (inkl. eget ATP-bidrag)</td>
+                      <td>95.352</td>
+                      <td>127.877</td>
+                      <td>131.028</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <td>Udgifter til el, vand og varme</td>
+                      <td>14.124</td>
+                      <td>14.124</td>
+                      <td>14.124</td>
+                    </tr>
+                    <tr>
+                      <td>Husleje</td>
+                      <td>73.728</td>
+                      <td>73.728</td>
+                      <td>73.728</td>
+                    </tr>
+                    <tr>
+                      <td>Forældrebetaling til daginstitution</td>
+                      <td>25.313</td>
+                      <td>32.127</td>
+                      <td>32.127</td>
+                    </tr>
+                    <tr class="sum--large">
+                      <td>Rådighedsbeløb</td>
+                      <td>183.871</td>
+                      <td>204.479</td>
+                      <td>205.935</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- #details -->
 
         </div>
-
       </div>
-
-    </div>
-
-  </div>
+      <!-- #output -->
 
 
 
 
+    </main>
+    <!-- #main -->
 
+    <footer id="footer">
+      <div class="container">
+        <p>Beregneren er udviklet i et samarbejde mellem</p>
+        <a href="http://kraka.org"><img src="assets/img/kraka-logo.png"></a>
+        <a href="http://keymade.io"><img src="assets/img/keymade-logo.png"></a>
+      </div>
+    </footer>
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="assets/js/vendor/watch.min.js"></script>

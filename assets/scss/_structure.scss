@@ -1,0 +1,49 @@
+// =============================================================================
+// STRUCTURE
+// =============================================================================
+
+#main {
+  background-color: #fff;
+  padding-bottom: 80px;
+  padding-top: 60px;
+}
+
+
+
+
+#footer {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  p {
+    font-size: 1.25em;
+    margin-bottom: 20px;
+  }
+
+  a {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 60px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+#header {
+  background-color: $grey-light;
+  height: 80px;
+  // margin-bottom: 60px;
+}
+
+
+#output {
+  border-top: solid 1px $border;
+  padding-top: 40px;
+  margin-top: 80px;
+  // background-color: $grey-light;
+}

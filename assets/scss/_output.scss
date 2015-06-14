@@ -1,0 +1,44 @@
+// =============================================================================
+// OUTPUT
+// =============================================================================
+
+#output {
+  @extend .clearfix;
+  position: relative;
+}
+
+.output__section {
+  width: 50%;
+  float: left;
+  text-align: center;
+  border: solid 1px $blackish;
+  border-left: none;
+  padding: 20px;
+
+  &.output__benefits {
+    border-left: solid 1px $blackish;
+  }
+}
+
+.output__value {
+  font-size: 3.5em;
+}
+
+
+.output__difference {
+  width: 100%;
+  float: left;
+  border: solid 1px $blackish;
+  border-top: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.details__open {
+  text-align: right;
+  margin-top: 20px;
+
+  a {
+    color: $blackish;
+  }
+}

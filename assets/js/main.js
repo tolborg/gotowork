@@ -43,17 +43,18 @@ var app = {
     app.watchResult();
     app.handleChildren();
     app.tabs();
+    app.toggle();
     app.radios();
+    app.selects();
     app.postAssumptions();
 
-    $(document).on("change", "#form [name]", function () {
-      app.updateDataFromForm();
+    $(document).on("change", "#form [name]", function (e) {
+      var name = $(this).attr("name");
+      app.updateDataFromForm(name);
     });
 
     // Perform correct actions based on hash existence
     var hash = window.location.hash.substring(1);
-
-    console.log(hash);
 
     if (hash == "") {
       app.updateForm();
@@ -67,7 +68,9 @@ var app = {
 
   watchData: function () {
     watch(options.data, function (prop, action, newvalue, oldvalue) {
-      app.distributeData();
+      app.updateForm();
+      app.updateHash();
+      app.updateResult();
     });
   },
 
@@ -76,9 +79,18 @@ var app = {
     watch(options.result, function (prop, action, newvalue, oldvalue) {
       if (prop == "benefits") {
         $("#output .output__benefits .output__value").text(newvalue + " kr.");
+        var amount = options.result.salary - options.result.benefits;
+        var percentage = (options.result.salary / options.result.benefits) * 100 - 100;
+        $("#output .output__difference-amount").text(amount + " kr.");
+        $("#output .output__difference-percentage").text("(" + Math.round(percentage) + "%)");
       }
       else if (prop == "salary") {
         $("#output .output__salary .output__value").text(newvalue + " kr.");
+        var amount = options.result.salary - options.result.benefits;
+        var percentage = (options.result.salary / options.result.benefits) * 100;
+        $("#output .output__difference-amount").text(amount + " kr.");
+        $("#output .output__difference-percentage").text("(" + Math.round(percentage) + "%)");
+
       }
     });
   },
@@ -107,44 +119,50 @@ var app = {
       }
     });
 
+
+    $(document).on("change", "#form [name*='child_care_']", function () {
+      var $inputs = $("#form [name*='child_care_']");
+
+      $inputs.find("option").removeAttr('disabled');
+
+      $inputs.each(function (i, v) {
+        $input = $(v);
+        var value = $input.val();
+
+        if (value != "a") {
+          $inputs.not($input).find("option[value='" + value + "']").attr('disabled','disabled');
+        }
+
+      });
+    });
+
+
     // $(document).on({
     //   focus: function () {
-    //     $(this).data("prev", $(this).val());
+    //     // $(this).data("prev", $(this).val());
+    //     // console.log("FOCUS: " + $(this).data("prev"));
     //   },
     //   change: function () {
-    //     var $input = $(this);
-    //     var $input_siblings = $input.closest(".form__inputs").find("select").not($input);
 
-    //     if ($input.val() != "a") {
-    //       $input_siblings.find("option[value='" + $input.val() + "']").attr('disabled','disabled');
-    //     }
-    //     else {
-    //       $input_siblings.find("option[value='" + $input.data("prev") + "']").removeAttr('disabled');
-    //     }
+
     //   }
-    // }, "#form [name='child_care_1'], #form [name='child_care_2'], #form [name='child_care_3']");
-  },
-
-
-  distributeData: function () {
-    app.updateForm();
-    app.updateHash();
-    app.updateResult();
+    // }, "#form [name*='child_care_']");
   },
 
 
   updateForm: function () {
+
     $.each(options.order, function (i, n) {
       var $input = $("[name='" + n + "']");
 
       if ($input.is("input[type='radio']")) {
-        console.log("what?");
         $input.filter('[value="'+ options.data[n] +'"]').prop("checked", true).trigger("change");
       }
       if ($input.is("select")) {
         $input.val(options.data[n]).trigger("change");
       }
     });
+
   },
 
 
@@ -159,21 +177,15 @@ var app = {
   },
 
 
-  updateDataFromForm: function () {
-    var newdata = {};
+  updateDataFromForm: function (name) {
+    var $input = $("[name='" + name + "']");
 
-    $.each(options.order, function (i, n) {
-      var $input = $("[name='" + n + "']");
-
-      if ($input.is("input[type='radio']")) {
-        newdata[n] = $input.filter(":checked").val();
-      }
-      if ($input.is("select")) {
-        newdata[n] = $input.val();
-      }
-    });
-
-    $.extend(options.data, newdata);
+    if ($input.is("input[type='radio']")) {
+      options.data[name] = $input.filter(":checked").val();
+    }
+    if ($input.is("select")) {
+      options.data[name] = $input.val();
+    }
   },
 
 
@@ -278,8 +290,6 @@ var app = {
 
     // });
 
-
-
   },
 
   tabs: function () {
@@ -297,14 +307,24 @@ var app = {
       $targetSection.addClass("tabs__section--active");
     });
 
-    $(document).on("click", ".details__close", function (e) {
-      e.preventDefault();
-      $("#details").addClass("hidden");
-    });
+  },
 
-    $(document).on("click", ".details__open", function (e) {
+  toggle: function () {
+
+    $(document).on("click", ".toggle", function (e) {
       e.preventDefault();
-      $("#details").removeClass("hidden");
+      var $trigger = $(this);
+      var $target = $($trigger.attr("data-target"));
+
+      if ($target.hasClass("hidden")) {
+        $trigger.text($trigger.attr("data-closetext"));
+        $target.removeClass("hidden");
+      }
+      else {
+        $trigger.text($trigger.attr("data-opentext"));
+        $target.addClass("hidden");
+      }
+
     });
 
   },
@@ -312,31 +332,33 @@ var app = {
   radios: function () {
 
     $(document).on("change", "input[type='radio']", function () {
-      console.log($(this));
       var $parent = $(this).closest(".form__input");
       var $uncles = $parent.siblings();
 
       $uncles.removeClass("checked");
       $parent.addClass("checked");
-      // var $uncles = $parent.siblings();
-
-      // $uncles.removeClass("checked");
-      // $parent.addClass("checked");
-
-
-
-      // console.log($(this));
     });
 
-    // $('input[type="radio"]').each(function (i, $radio) {
-    //   // var $label
-    //   // console.log($radio);
-    //   // var label = $radio.prev().text;
+  },
 
+  selects: function () {
+    $(document).on({
+      init: function () {
+        var $select = $(this);
+        $select.after($('<div>', { "class": 'form-fake' }));
+        $select.trigger('update');
+      },
+      update: function () {
+        var $select = $(this);
+        var text = $select.find('option:selected').text();
+        $select.next().text(text);
+      },
+      change: function () {
+        $(this).trigger('update');
+      }
+    }, 'select');
 
-
-    // });
-
+    $("select").trigger('init');
 
   }
 

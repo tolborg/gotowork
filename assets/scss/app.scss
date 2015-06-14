@@ -3,11 +3,14 @@
 // Primary import file. Dont add code, only imports!
 // =============================================================================
 
+@import "settings";
 @import "normalize";
 @import "base";
 @import "helpers";
 @import "table";
 @import "tabs";
+@import "structure";
+@import "output";
 
 
 
@@ -38,7 +41,7 @@
 
   .checked .form__label {
     color: #fff;
-    background-color: #000;
+    background-color: $blackish;
   }
 }
 
@@ -62,6 +65,109 @@
     width: (100/4) * 1%;
   }
 }
+
+
+
+.form__group {
+  margin-bottom: 30px;
+  border: 1px solid $border;
+  padding: 20px;
+}
+
+.form__group-label {
+  margin-bottom: 10px;
+}
+
+.form__input--select {
+
+  label {
+    @extend .clearfix;
+    position: relative;
+    display: block;
+  }
+
+  .form__label {
+    display: block;
+    float: left;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  select {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: (14/16) * 1em;
+  }
+
+
+  .form-fake {
+    position: relative;
+    display: block;
+    background-color: #ddd;
+    cursor: pointer;
+    padding: 20px;
+
+    color: #000;
+    background-color: #ddd;
+
+
+
+    &:after {
+      display: block;
+      width: 30px;
+      height: 18px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 20px;
+      margin-top: auto;
+      margin-bottom: auto;
+      content: "";
+      background-image: url(../img/down.svg);
+      background-size: 30px 18px;
+    }
+  }
+
+  .form__group--children & {
+
+    select {
+      left: auto;
+      width: 50%;
+    }
+
+    .form-fake {
+      float: right;
+      width: 50%;
+    }
+  }
+}
+
+
+.form__group--children {
+
+  .form__input--select {
+    margin-bottom: 10px;
+
+    &:first-child {
+      margin-top: 20px;
+    }
+  }
+}
+
+
+
 
 
 
